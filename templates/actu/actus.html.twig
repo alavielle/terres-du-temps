@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block title %}Actualités{% endblock %}
+{% block body %}
+        <br>
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-header" style="color: #ce5c2e;">
+                    Rechercher une actualité
+                </div>
+                <div class="card-body">
+                    <form method="GET" action="{{ path('actu') }}">
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Quelle période ?</label>
+                                <select name="periode" class="form-control">
+                                    <option value="">Choisir</option>
+                                    <option value="PREHISTOIRE">La Préhistoire</option>
+                                    <option value="ANTIQUITE">L’ Antiquité</option>
+                                    <option value="MOYEN_AGE">Le Moyen-Age</option>
+                                    <option value="TEMPS_MODERN">Les Temps modernes</option>
+                                    <option value="EPOQUE_CONTEMPORAINE" >L'Époque Contemporaine</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="">Mot clé</label>
+                                <input type="text" name="key" value="" class="form-control" id="" placeholder="ecrire">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <input type="submit" class="col-3 mx-auto search-bouton" value ="Rechercher">
+                        </div>
+                    </form>
+                </div>
+            </div><!--Fin recherche-->
+            <div class="">
+                <div style="font-size: x-large; margin: 15px;">
+                    <p> Les actualités du moment</p>
+                </div>
+                {% for actu in actus %}
+                    <div class="box-item">
+                        <div class="row">
+                            <div class="col-8">
+                                <a href="{{ path('actuDetails',{'id':actu.id}) }}"><strong>{{actu.title}}</strong></a>
+                                <p>
+                                    {{actu.description |raw}}
+                                </p>
+                            </div>
+                            <div class="col-4">
+                                <img style= "width: 100%;height: 100%" src ="upload/images/actu/{{actu.photo}}">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                           <span class="little-text"> Période: {{actu.periode}}</span>
+                        </div>
+                         <br>
+                        <div class="row">
+                            <a href="#features" class="main-button-slider">Ajouter au favori</a>&nbsp;&nbsp;
+                            <a href="#" class="main-button">Voir plus</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="pagination-section">
+                    {{ knp_pagination_render(actus) }}
+                </div>  
+                <br>
+            </div>
+        </div>
+{% endblock %}
+
+

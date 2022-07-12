@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Actualité Détails{% endblock %}
+{% block body %}
+    <br>
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <strong> {{actuDetails.title}} </strong>
+                        </div>
+                        <div class="row">
+                            <img style= "" src ="/upload/images/actu/{{actuDetails.photo}}">
+                        </div>
+                        <div class="row">
+                            <p>
+                                {{actuDetails.description |raw}}
+                            </p>
+                        </div>
+                        <div class="back">
+                            <a href="/actu"> < Retour aux actualités</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <br>
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+{% block title %}Page d'accueil
+{% endblock %}
+{% block body %}
+    <br>
+    <div class="container">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <h5 style="color: #ce5c2e;">A la une</h5>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-7">
+                            <p class="home-card-title mb-3">Actualité</p>
+                            <h6 class="home-card-sub-title mb-2">{{homeActu.title}}</h6>
+                            <p class="home-card-text">{{homeActu.description |raw}}</p>
+                            <h6 class="home-card-sub-title mb-2 text-center"><a style="color:#ce5c2e;" href="https://www.eventbrite.fr/e/billets-brennus-130-ans-345648623337">INSCRIVEZ VOUS ICI</a></h6>
+                            <h6 class="home-card-sub-title mb-2">Au programme :</h6>
+                            <p class="home-card-text">
+                                9h00 : Ouverture des portes<br>
+                                10h00 : Match de rugby à 5 U14 “minimes” : Stade Français vs Racing club de France<br>
+                                10h30 : Match rugby à 5 féminin : Stade Français vs Racing club de France<br>
+                                11h00 : Match rugby à 5 des légendes : Stade français vs Racing club de France<br>
+                                <span class="fw-bold">12h00 : La grande finale : Stade Français vs Racing club de France</span><br>
+                                13h30 : Remise du trophée<br>
+                                14h00 : Tirage au sort de la tombola et remises de cadeaux<br>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="home-card-img">
+                                <img style="width:97%" src="upload/images/actu/{{homeActu.photo}}" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="home-card-title fw-bold text-center text-md-start">ELEGANTES DE LA BELLE EPOQUE - BUVETTE - FOOD TRUCKS - TOMBOLA - BOUTIQUES DES CLUBS
+                        </p>
+                        <h6 class="home-card-sub-title text-center mb-2">Brennus 130 ans est un événenement présenté par Seine Event et ses partenaires</h6>
+                        <div class="home-card-img">
+                            <img style="width:100%" src="img/partenaires.png" alt="Nos partenaires"/>
+                        </div>
+                    </div>
+                    <hr class="solid">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="home-card-title mb-3">Agenda</p>
+                            <h6 class="home-card-sub-title mb-2">{{homeAgenda.name}}</h6>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-5">
+                            <div class="home-card-img">
+                                <img src="upload/images/agenda/{{homeAgenda.photo}}" style="width: 100%"/>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <p class="home-card-text">{{homeAgenda.description |raw}}</p>
+                        </div>
+                    </div>
+                    <hr class="solid">
+                    {# <div class="row">
+                        <div class="col-12">
+                            <p class="home-card-title mb-3">Annuaire</p>
+                            <h6 class="home-card-sub-title mb-2">{{homeAnnuaire.name}}</h6>
+                        </div>
+                    </div> #}
+                    <div class="row mt-3">
+                        <div class="col-md-5 mx-auto">
+                            <div class="home-card-img">
+                                <img src="upload/images/annuaire/{{homeAnnuaire.photo}}" style="width: 100%"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 mx-auto">
+                            <p class="home-card-text text-center">{{homeAnnuaire.description |raw}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <h5 style="color: #ce5c2e;">Coups de coeur</h5>
+                    </div>
+                    <br>
+                    <div class="row heart-card">
+                        <div class="d-flex col-sm-3 align-items-center" style="border-right: 1px solid rgba(0, 0, 0, 0.125)">
+                            <img src="/img/logo_noir.jpg" style="width: 100%;" alt="Terres-du-Temps"/>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="home-card-title">18 JUIN 2022</p>
+                            <h6 class="home-card-sub-title">BRENNUS 130 ANS</h6>
+                            <p>
+                                <span class="fw-bold">ENTRÉE GRATUITE</span><br>
+                                Stade de rugby Christophe Dominici<br>
+                                Route des tribunes de Mortemart<br> 75016 Paris
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row heart-card">
+                        <div class="d-flex col-sm-3 align-items-center" style="border-right: 1px solid rgba(0, 0, 0, 0.125)">
+                            <img src="/img/leptitbouclier.jpg" style="width: 100%;" alt="Le petit bouclier"/>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="home-card-title">18 JUIN 2022</p>
+                            <h6 class="home-card-sub-title">LE PETIT BOUCLIER</h6>
+                            <p>Le bouclier de Brenus offre généreusement ce trophée au club vainqueur !<br>
+                                <a href="https://www.lebouclierdebrennus.com/product-page/le-petit-bouclier">www.lebouclierdebrennus.com </a>
+                            </p>
+                        </div>
+                    </div>
+                    {# <br>
+                    <div class="row heart-card">
+                        <div class="d-flex col-sm-3 align-items-center" style="border-right: 1px solid rgba(0, 0, 0, 0.125)">
+                            <img src="/img/logo_noir.jpg" style="width: 100%;" alt="Terres-du-Temps"/>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="home-card-title">Histoire</p>
+                            <h6 class="home-card-sub-title">Titre de l'actualité</h6>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            </p>
+                        </div>
+                    </div> #}
+                </div>
+            </div>
+        </div>
+
+        <br>
+    {% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Détails{% endblock %}
+{% block body %}
+    <br>
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <strong> {{annuaireDetails.name}} </strong>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <img style= "" src ="/upload/images/annuaire/{{annuaireDetails.photo}}">
+                        </div>
+                        <div class="row">
+                            <p>
+                                {{annuaireDetails.description |raw}}
+                            </p>
+                        </div>
+                        <div class="back">
+                            <a href="/annuaire"> < Retour à la liste</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <br>
+{% endblock %}

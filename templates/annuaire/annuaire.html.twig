@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block title %}Annuaire{% endblock %}
+{% block body %}
+<br>
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-header" style="color: #ce5c2e;">
+                    Rechercher une association ou un professionnel
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Quelle période ?</label>
+                            <input type="text" value="" class="form-control" id="" placeholder="Choisir">
+                        </div>
+                        <div class="col">
+                            <label for="">Quelle structure ?</label>
+                            <input type="text" value="" class="form-control" id="" placeholder="ecrire">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Ou ?</label>
+                            <input type="text" value="" class="form-control" id="" placeholder="Choisir">
+                        </div>
+                        <div class="col">
+                            <label for="">Mot clé</label>
+                            <input type="text" value="" class="form-control" id="" placeholder="ecrire">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <a href="#" class="col-3 mx-auto main-button">Rechercher</a> 
+                    </div>
+                </div>
+            </div><!--Fin recherche-->
+            <div class="">
+                <div style="font-size: x-large; margin: 15px;">
+                    <p> Les coups de coeur</p>
+                </div>
+                {% for annuaire in annuaires %}
+                    <div class="box-item">
+                        <div class="row">
+                            <div class="col-8">
+                                  <a href="{{ path('annuaireDetails',{'id':annuaire.id}) }}"><strong>{{annuaire.name}}</strong></a>
+                               
+                                <p>
+                                    {{annuaire.description |raw}}
+                                </p>
+                            </div>
+                            <div class="col-4">
+                                <img style= "width: 100%;height: 100%" src ="upload/images/annuaire/{{annuaire.photo}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            Période: {{annuaire.periode}}
+                        </div>
+                        <br>
+                        <div class="row text-center">
+                            {# <a href="#features" class="col-3 mx-auto main-button-slider">Ajouter au favori</a> #}
+                            <a href="#" class="col-3 mx-auto main-button">Voir plus</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="pagination-section">
+                    {{ knp_pagination_render(annuaires) }}
+                </div>  
+                <br>
+            </div>
+        </div>
+{% endblock %}
+

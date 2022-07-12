@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact{% endblock %}
+{% block body %}
+<br>
+    <div class="container m-5 mx-auto">
+        <div class="card text-center mx-5">
+            <div class="card-body mx-5">
+                <div class="container">
+                    <div class="row"">
+                        <strong style="color: #ce5c2e;">Contactez-nous</strong>
+                    </div>
+                    <br>
+                    <div class="row"">
+                        <p>Laissez-nous un message et vos coordonnées, nous ne manquerons pas de vous recontacter très vite !</p>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="">Sujet de la demande</label>
+                        <select name="periode" class="form-control">
+                            <option value="Inscrire son association dans l'annuaire ">Inscrire son association dans l'annuaire</option>
+                            <option value="Inscrire son événement dans l'agenda">Inscrire son événement dans l'agenda</option>
+                            <option value="Proposition de partenariat">Proposition de partenariat</option>
+                            <option value="Proposition pour participer à un événement">Proposition pour participer à un événement</option>
+                            <option value="Autre demande" >Autre demande</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="">Votre demande</label>
+                        <textarea class="form-control" rows="5" cols="33"></textarea>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="">Email</label>
+                        <input type="text" value="" class="form-control" id="" placeholder="adresse mail">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <button class="col-3 col-sm-2 text-nowrap mx-auto main-button" >Envoyer</button> 
+                    </div>
+                    <!--div class="form">
+                        {{ form_start(form) }}
+                            <span>
+                                {{ form_row(form.nom, {"label":"NOM"}) }}
+                            </span>
+                            <span>
+                                {{ form_row(form.prenom, {"label":"PRÉNOM"}) }}
+                            </span>
+                            <span>
+                                {{ form_row(form.email, {"label":"EMAIL"}) }}
+                            </span>
+                            <span>
+                                {{ form_row(form.message, {"label":"MESSAGE"}) }}
+                            </span>
+                        {{ form_end(form) }}
+                    </div-->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
